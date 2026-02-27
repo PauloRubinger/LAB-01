@@ -1,0 +1,11 @@
+owner,name,stars,created_at,updated_at,language,merged_prs,releases,issues_total,issues_closed
+codecrafters-io,build-your-own-x,469778,2018-05-09T12:03:18Z,2026-02-27T15:56:34Z,Markdown,155,0,886,653
+sindresorhus,awesome,441121,2014-07-11T13:42:37Z,2026-02-27T16:01:27Z,,693,0,363,347
+freeCodeCamp,freeCodeCamp,437572,2014-12-24T17:49:19Z,2026-02-27T15:45:50Z,TypeScript,27688,0,21133,20933
+public-apis,public-apis,400813,2016-03-20T23:49:42Z,2026-02-27T16:02:34Z,Python,1872,0,832,830
+EbookFoundation,free-programming-books,383171,2013-10-11T06:50:37Z,2026-02-27T15:56:55Z,Python,7328,0,1262,1227
+kamranahmedse,developer-roadmap,349842,2017-03-15T13:45:52Z,2026-02-27T15:56:15Z,TypeScript,4050,1,3076,3049
+jwasham,coding-interview-university,337480,2016-06-06T02:34:12Z,2026-02-27T15:27:29Z,,415,0,525,454
+donnemartin,system-design-primer,336840,2017-02-26T16:15:28Z,2026-02-27T16:00:56Z,Python,203,0,358,110
+vinta,awesome-python,284775,2014-06-27T21:00:06Z,2026-02-27T15:58:02Z,Python,637,0,0,0
+awesome-selfhosted,awesome-selfhosted,275648,2015-06-01T02:33:17Z,2026-02-27T15:59:50Z,,2395,1,807,807

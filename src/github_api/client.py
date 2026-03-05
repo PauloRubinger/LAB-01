@@ -16,7 +16,6 @@ def run_query(query: str) -> dict:
         GITHUB_API_URL,
         json={"query": query},
         headers=HEADERS,
-        timeout=30
     )
 
     if response.status_code != 200:

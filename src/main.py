@@ -6,7 +6,8 @@ load_dotenv()
 
 from .github_api.client import run_query
 from .github_api.query import top_repositories_query
-from .processing.parser import parse_repositories
+from .github_api.pagination import fetch_repositories
+from .processing.parser import parse_repository
 from .processing.metrics import extract_metrics
 
 def test_query():
@@ -19,14 +20,14 @@ def test_query():
     """
 
 def main():
-    response = run_query(top_repositories_query())
-    # response = run_query(test_query())
-    print(response)
-    repos = parse_repositories(response)
+
+    print("Coletando repositórios...")
+
+    repos = fetch_repositories(1000)
 
     os.makedirs("data", exist_ok=True)
 
-    with open("data/repos_100.csv", "w", newline="", encoding="utf-8") as f:
+    with open("data/repos_1000.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
             fieldnames=[
@@ -36,12 +37,13 @@ def main():
                 "issues_total", "issues_closed"
             ]
         )
+
         writer.writeheader()
 
         for repo in repos:
             writer.writerow(extract_metrics(repo))
 
-    print("✅ Sprint 1 concluída com sucesso")
+    print(f"✅ Coletados {len(repos)} repositórios com sucesso!")
 
 if __name__ == "__main__":
     main()

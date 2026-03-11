@@ -4,10 +4,7 @@ import os
 
 load_dotenv()
 
-from .github_api.client import run_query
-from .github_api.query import top_repositories_query
 from .github_api.pagination import fetch_repositories
-from .processing.parser import parse_repository
 from .processing.metrics import extract_metrics
 
 def test_query():

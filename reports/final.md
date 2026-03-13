@@ -207,7 +207,7 @@ A mediana de 40 releases indica que esses sistemas não são estáticos. Existe 
 
 Este é um dos pontos mais contundentes do experimento. O gráfico de Tempo desde a última atualização mostra que a vasta maioria dos repositórios foi atualizada há menos de 5 horas. A frequência de projetos que ficam mais de 10 horas sem atualizações cai drasticamente, o que demonstra que a popularidade exige (ou resulta em) uma manutenção praticamente em tempo real.
 
-A mediana de 0,94 hora desde a última atualização mostra que o tempo de resposta e a manutenção são quase imediatos. Isso sugere que a popularidade está diretamente vinculada à percepção de um projeto "vivo" e bem cuidado.
+A mediana de 1,03 hora desde a última atualização mostra que o tempo de resposta e a manutenção são quase imediatos. Isso sugere que a popularidade está diretamente vinculada à percepção de um projeto "vivo" e bem cuidado.
 
 ---
 

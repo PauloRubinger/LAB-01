@@ -121,8 +121,8 @@ plt.savefig("reports/figures/top_languages.png")
 print("\nRQ06 — Percentual de issues fechadas:")
 print(df["closed_issues_ratio"].describe())
 
-median_closed_ratio = round(df["closed_issues_ratio"].median(), 2)
-print("Mediana da razão de issues fechadas:", median_closed_ratio)
+median_closed_ratio = df["closed_issues_ratio"].median()
+print(f"Mediana da razão de issues fechadas: {median_closed_ratio:.2f}")
 
 plt.figure()
 df["closed_issues_ratio"].hist(bins=30)
@@ -159,3 +159,24 @@ plt.savefig("reports/figures/closed_issues_ratio.png")
 # metrics_by_language.head(10)["days_since_update"].plot(kind="bar")
 # plt.title("Tempo médio desde atualização por linguagem")
 # plt.ylabel("Dias")
+
+medians = {
+    "metric": [
+        "age_years",
+        "merged_prs",
+        "releases",
+        "days_since_update",
+        "closed_issues_ratio"
+    ],
+    "median": [
+        round(df["age_years"].median(), 2),
+        round(df["merged_prs"].median(), 2),
+        round(df["releases"].median(), 2),
+        round(df["days_since_update"].median(), 2),
+        round(df["closed_issues_ratio"].median(), 2)
+    ]
+}
+
+median_df = pd.DataFrame(medians)
+
+median_df.to_csv("data/processed/medians.csv", index=False)

@@ -126,6 +126,7 @@ Os dados foram processados utilizando técnicas básicas de análise exploratór
 | Razão de issues fechadas | valor entre 0 e 1 |
 
 ---
+<div style="page-break-after: always;"></div>
 
 # 3. Visualização dos Resultados
 
@@ -137,11 +138,15 @@ Foram gerados gráficos para representar a distribuição das principais métric
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ### Razão de issues fechadas
 
 ![Distribuição da razão de issues fechadas](figures/closed_issues_ratio.png)
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ### Relação entre estrelas e pull requests
 
@@ -149,11 +154,15 @@ Foram gerados gráficos para representar a distribuição das principais métric
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ### Relação entre estrelas e releases
 
 ![Stars vs Releases](figures/stars_vs_releases.png)
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ### Linguagens mais utilizadas
 
@@ -161,11 +170,15 @@ Foram gerados gráficos para representar a distribuição das principais métric
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ### Tempo desde a última atualização
 
 ![Tempo desde a última atualização](figures/update_time_hours.png)
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 ### Mediana das métricas analisadas
 
@@ -174,6 +187,8 @@ A tabela abaixo apresenta a mediana das métricas utilizadas no estudo.
 ![Tabela de medianas](figures/medians_table.png)
 
 ---
+
+<div style="page-break-after: always;"></div>
 
 # 4. Discussão dos Resultados
 

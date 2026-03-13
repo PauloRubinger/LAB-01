@@ -44,7 +44,7 @@ df["age_years"].hist(bins=30)
 plt.title("Distribuição da idade dos repositórios")
 plt.xlabel("Idade (anos)")
 plt.ylabel("Quantidade")
-plt.savefig("reports/figures/age_distribution.png")
+plt.savefig("reports/figures/age_distribution.png", dpi=300)
 
 # =========================
 # RQ02
@@ -56,11 +56,15 @@ print(df["merged_prs"].describe())
 
 median_prs = df["merged_prs"].median()
 print("Mediana:", median_prs)
-
 plt.figure()
-sns.scatterplot(data=df, x="stars", y="merged_prs")
-plt.title("Stars vs Pull Requests aceitas")
-plt.savefig("reports/figures/stars_vs_prs.png")
+
+plt.scatter(df["stars"], df["merged_prs"], s=10, alpha=0.5)
+
+plt.title("Estrelas vs Pull Requests aceitas")
+plt.xlabel("Stars")
+plt.ylabel("Merged PRs")
+
+plt.savefig("reports/figures/stars_vs_prs.png", dpi=300)
 
 # =========================
 # RQ03
@@ -74,9 +78,11 @@ median_releases = df["releases"].median()
 print("Mediana:", median_releases)
 
 plt.figure()
-sns.scatterplot(data=df, x="stars", y="releases")
-plt.title("Stars vs Releases")
-plt.savefig("reports/figures/stars_vs_releases.png")
+plt.scatter(df["stars"], df["releases"], s=10, alpha=0.5)
+plt.title("Estrelas vs Releases")
+plt.xlabel("Stars")
+plt.ylabel("Releases")
+plt.savefig("reports/figures/stars_vs_releases.png", dpi=300)
 
 # =========================
 # RQ04
@@ -91,7 +97,7 @@ print("Mediana:", median_update)
 
 plt.figure()
 df["days_since_update"].hist(bins=30)
-plt.title("Tempo desde última atualização")
+plt.title("Tempo desde a última atualização")
 plt.xlabel("Dias")
 plt.ylabel("Quantidade")
 plt.savefig("reports/figures/days_since_update.png")
@@ -111,7 +117,8 @@ sns.barplot(x=top_languages.values, y=top_languages.index)
 plt.title("Top 10 linguagens")
 plt.xlabel("Quantidade de repositórios")
 plt.ylabel("Linguagem")
-plt.savefig("reports/figures/top_languages.png")
+plt.subplots_adjust(left=0.25)
+plt.savefig("reports/figures/top_languages.png", dpi=300)
 
 # =============================
 # RQ06

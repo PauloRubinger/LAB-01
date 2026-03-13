@@ -43,7 +43,7 @@ plt.figure()
 df["age_years"].hist(bins=30)
 plt.title("Distribuição da idade dos repositórios")
 plt.xlabel("Idade (anos)")
-plt.ylabel("Quantidade")
+plt.ylabel("Quantidade de repositórios")
 plt.savefig("reports/figures/age_distribution.png", dpi=300)
 
 # =========================
@@ -100,7 +100,7 @@ df["hours_since_update"].hist(bins=80)
 
 plt.title("Tempo desde a última atualização")
 plt.xlabel("Horas desde a última atualização")
-plt.ylabel("Repositórios")
+plt.ylabel("Quantidade de repositórios")
 
 plt.tight_layout()
 plt.savefig("reports/figures/update_time_hours.png", dpi=300)
@@ -138,7 +138,7 @@ plt.figure()
 df["closed_issues_ratio"].hist(bins=30)
 plt.title("Distribuição da razão de issues fechadas")
 plt.xlabel("Razão")
-plt.ylabel("Quantidade")
+plt.ylabel("Quantidade de repositórios")
 plt.savefig("reports/figures/closed_issues_ratio.png")
 
 # =========================

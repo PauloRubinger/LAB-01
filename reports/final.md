@@ -167,6 +167,14 @@ Foram gerados gráficos para representar a distribuição das principais métric
 
 ---
 
+### Mediana das métricas analisadas
+
+A tabela abaixo apresenta a mediana das métricas utilizadas no estudo.
+
+![Tabela de medianas](figures/medians_table.png)
+
+---
+
 # 4. Discussão dos Resultados
 
 ### Confronto com as questões de pesquisa

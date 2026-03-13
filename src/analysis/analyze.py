@@ -19,8 +19,8 @@ df["updated_at"] = pd.to_datetime(df["updated_at"])
 # Idade do repositório em anos
 df["age_years"] = (pd.Timestamp.now(tz="UTC") - df["created_at"]).dt.days / 365
 
-# Tempo desde última atualização (dias)
-df["days_since_update"] = (pd.Timestamp.now(tz="UTC") - df["updated_at"]).dt.days
+# Tempo desde última atualização (horas)
+df["hours_since_update"] = (pd.Timestamp.now(tz="UTC") - df["updated_at"]).dt.total_seconds() / 3600
 
 # Percentual de issues fechadas
 df["closed_issues_ratio"] = df["issues_closed"] / df["issues_total"]
@@ -89,18 +89,21 @@ plt.savefig("reports/figures/stars_vs_releases.png", dpi=300)
 # Atualização
 # =========================
 
-print("\nRQ04 — Dias desde última atualização:")
-print(df["days_since_update"].describe())
+print("\nRQ04 — Horas desde última atualização:")
+print(df["hours_since_update"].describe())
 
-median_update = df["days_since_update"].median()
+median_update = df["hours_since_update"].median()
 print("Mediana:", median_update)
 
 plt.figure()
-df["days_since_update"].hist(bins=30)
+df["hours_since_update"].hist(bins=80)
+
 plt.title("Tempo desde a última atualização")
-plt.xlabel("Dias")
-plt.ylabel("Quantidade")
-plt.savefig("reports/figures/days_since_update.png")
+plt.xlabel("Horas desde a última atualização")
+plt.ylabel("Repositórios")
+
+plt.tight_layout()
+plt.savefig("reports/figures/update_time_hours.png", dpi=300)
 
 # =========================
 # RQ05
@@ -117,7 +120,7 @@ sns.barplot(x=top_languages.values, y=top_languages.index)
 plt.title("Top 10 linguagens")
 plt.xlabel("Quantidade de repositórios")
 plt.ylabel("Linguagem")
-plt.subplots_adjust(left=0.25)
+plt.tight_layout()
 plt.savefig("reports/figures/top_languages.png", dpi=300)
 
 # =============================
@@ -146,7 +149,7 @@ plt.savefig("reports/figures/closed_issues_ratio.png")
 # metrics_by_language = df.groupby("language").agg({
 #     "merged_prs": "mean",
 #     "releases": "mean",
-#     "days_since_update": "mean"
+#     "hours_since_update": "mean"
 # }).sort_values("merged_prs", ascending=False)
 
 # print("\nRQ07 — Métricas médias por linguagem:")
@@ -163,23 +166,23 @@ plt.savefig("reports/figures/closed_issues_ratio.png")
 # plt.ylabel("Releases")
 
 # plt.figure()
-# metrics_by_language.head(10)["days_since_update"].plot(kind="bar")
+# metrics_by_language.head(10)["hours_since_update"].plot(kind="bar")
 # plt.title("Tempo médio desde atualização por linguagem")
-# plt.ylabel("Dias")
+# plt.ylabel("Horas")
 
 medians = {
     "metric": [
         "age_years",
         "merged_prs",
         "releases",
-        "days_since_update",
+        "hours_since_update",
         "closed_issues_ratio"
     ],
     "median": [
         round(df["age_years"].median(), 2),
         round(df["merged_prs"].median(), 2),
         round(df["releases"].median(), 2),
-        round(df["days_since_update"].median(), 2),
+        round(df["hours_since_update"].median(), 2),
         round(df["closed_issues_ratio"].median(), 2)
     ]
 }

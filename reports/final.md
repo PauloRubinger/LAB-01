@@ -191,7 +191,7 @@ Com uma mediana de 8,34 anos, os resultados confirmam que a maturidade é um pil
 
 O gráfico de Estrelas vs Pull Requests (PRs) mostra que não há uma correlação linear perfeita, mas sim uma tendência de alta atividade. Enquanto a massa de projetos possui até 20.000 PRs, existem casos extremos (outliers) com mais de 80.000 PRs aceitas. Curiosamente, alguns dos repositórios com o maior número de estrelas (acima de 300k) possuem menos PRs que projetos de médio porte, sugerindo que projetos extremamente populares podem ser informativos (curadorias) ou ter um núcleo de contribuidores mais restrito.
 
-A mediana de 746 PRs aceitas revela um nível de engajamento comunitário robusto. Embora o gráfico de dispersão mostre casos excepcionais com dezenas de milhares de PRs, o valor central de 746 demonstra que, para ser popular, o repositório geralmente precisa estar aberto e aceitar contribuições externas de forma regular.
+A mediana de 738 PRs aceitas revela um nível de engajamento comunitário robusto. Embora o gráfico de dispersão mostre casos excepcionais com dezenas de milhares de PRs, o valor central de 746 demonstra que, para ser popular, o repositório geralmente precisa estar aberto e aceitar contribuições externas de forma regular.
 
 ---
 
@@ -205,9 +205,9 @@ A mediana de 40 releases indica que esses sistemas não são estáticos. Existe 
 
 **RQ04 – Atualizações**
 
-Este é um dos pontos mais contundentes do experimento. O gráfico de Tempo desde a última atualização mostra que a vasta maioria dos repositórios foi atualizada há menos de 15 horas. A frequência de projetos que ficam mais de 24 horas sem atualizações cai drasticamente, o que demonstra que a popularidade exige (ou resulta em) uma manutenção praticamente em tempo real.
+Este é um dos pontos mais contundentes do experimento. O gráfico de Tempo desde a última atualização mostra que a vasta maioria dos repositórios foi atualizada há menos de 5 horas. A frequência de projetos que ficam mais de 10 horas sem atualizações cai drasticamente, o que demonstra que a popularidade exige (ou resulta em) uma manutenção praticamente em tempo real.
 
-A mediana de 13,06 horas desde a última atualização mostra que o tempo de resposta e a manutenção são quase imediatos. Isso sugere que a popularidade está diretamente vinculada à percepção de um projeto "vivo" e bem cuidado.
+A mediana de 0,95 hora desde a última atualização mostra que o tempo de resposta e a manutenção são quase imediatos. Isso sugere que a popularidade está diretamente vinculada à percepção de um projeto "vivo" e bem cuidado.
 
 ---
 

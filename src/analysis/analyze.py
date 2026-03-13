@@ -36,6 +36,9 @@ print(df.head())
 print("\nRQ01 — Idade média dos repositórios:")
 print(df["age_years"].describe())
 
+median_age = df["age_years"].median()
+print("Mediana da idade:", median_age)
+
 plt.figure()
 df["age_years"].hist(bins=30)
 plt.title("Distribuição da idade dos repositórios")
@@ -51,6 +54,9 @@ plt.savefig("reports/figures/age_distribution.png")
 print("\nRQ02 — Pull Requests aceitas:")
 print(df["merged_prs"].describe())
 
+median_prs = df["merged_prs"].median()
+print("Mediana:", median_prs)
+
 plt.figure()
 sns.scatterplot(data=df, x="stars", y="merged_prs")
 plt.title("Stars vs Pull Requests aceitas")
@@ -64,6 +70,9 @@ plt.savefig("reports/figures/stars_vs_prs.png")
 print("\nRQ03 — Releases:")
 print(df["releases"].describe())
 
+median_releases = df["releases"].median()
+print("Mediana:", median_releases)
+
 plt.figure()
 sns.scatterplot(data=df, x="stars", y="releases")
 plt.title("Stars vs Releases")
@@ -76,6 +85,9 @@ plt.savefig("reports/figures/stars_vs_releases.png")
 
 print("\nRQ04 — Dias desde última atualização:")
 print(df["days_since_update"].describe())
+
+median_update = df["days_since_update"].median()
+print("Mediana:", median_update)
 
 plt.figure()
 df["days_since_update"].hist(bins=30)
@@ -108,6 +120,9 @@ plt.savefig("reports/figures/top_languages.png")
 
 print("\nRQ06 — Percentual de issues fechadas:")
 print(df["closed_issues_ratio"].describe())
+
+median_closed_ratio = round(df["closed_issues_ratio"].median(), 2)
+print("Mediana da razão de issues fechadas:", median_closed_ratio)
 
 plt.figure()
 df["closed_issues_ratio"].hist(bins=30)

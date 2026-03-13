@@ -121,9 +121,9 @@ print(top_languages)
 
 plt.figure()
 sns.barplot(x=top_languages.values, y=top_languages.index)
-plt.title("Top 10 linguagens")
+plt.title("Linguagens principais mais utilizadas")
 plt.xlabel("Quantidade de repositórios")
-plt.ylabel("Linguagem")
+plt.ylabel("Linguagem principal")
 plt.tight_layout()
 plt.savefig("reports/figures/top_languages.png", dpi=300)
 plt.close()
@@ -144,7 +144,7 @@ df["closed_issues_ratio"].hist(bins=30)
 plt.title("Distribuição da razão de issues fechadas")
 plt.xlabel("Razão")
 plt.ylabel("Quantidade de repositórios")
-plt.savefig("reports/figures/closed_issues_ratio.png")
+plt.savefig("reports/figures/closed_issues_ratio.png", dpi=300)
 plt.close()
 
 # =========================
@@ -225,8 +225,8 @@ table = plt.table(
     cellText=median_df.values,
     colLabels=median_df.columns,
     loc="center",
-    cellLoc="center",   # centraliza conteúdo das células
-    colLoc="center"     # centraliza cabeçalho
+    cellLoc="center",
+    colLoc="center"
 )
 
 table.auto_set_font_size(False)

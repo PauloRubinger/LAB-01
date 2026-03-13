@@ -45,6 +45,7 @@ plt.title("Distribuição da idade dos repositórios")
 plt.xlabel("Idade (anos)")
 plt.ylabel("Quantidade de repositórios")
 plt.savefig("reports/figures/age_distribution.png", dpi=300)
+plt.close()
 
 # =========================
 # RQ02
@@ -65,6 +66,7 @@ plt.xlabel("Stars")
 plt.ylabel("Merged PRs")
 
 plt.savefig("reports/figures/stars_vs_prs.png", dpi=300)
+plt.close()
 
 # =========================
 # RQ03
@@ -83,6 +85,7 @@ plt.title("Estrelas vs Releases")
 plt.xlabel("Stars")
 plt.ylabel("Releases")
 plt.savefig("reports/figures/stars_vs_releases.png", dpi=300)
+plt.close()
 
 # =========================
 # RQ04
@@ -104,6 +107,7 @@ plt.ylabel("Quantidade de repositórios")
 
 plt.tight_layout()
 plt.savefig("reports/figures/update_time_hours.png", dpi=300)
+plt.close()
 
 # =========================
 # RQ05
@@ -122,6 +126,7 @@ plt.xlabel("Quantidade de repositórios")
 plt.ylabel("Linguagem")
 plt.tight_layout()
 plt.savefig("reports/figures/top_languages.png", dpi=300)
+plt.close()
 
 # =============================
 # RQ06
@@ -140,6 +145,7 @@ plt.title("Distribuição da razão de issues fechadas")
 plt.xlabel("Razão")
 plt.ylabel("Quantidade de repositórios")
 plt.savefig("reports/figures/closed_issues_ratio.png")
+plt.close()
 
 # =========================
 # RQ07 (BÔNUS)
@@ -190,3 +196,43 @@ medians = {
 median_df = pd.DataFrame(medians)
 
 median_df.to_csv("data/processed/medians.csv", index=False)
+
+plt.figure(figsize=(6,3))
+
+plt.axis("off")
+
+metric_names = {
+    "age_years": "Idade do repositório (anos)",
+    "merged_prs": "Pull Requests aceitas",
+    "releases": "Número de releases",
+    "hours_since_update": "Horas desde última atualização",
+    "closed_issues_ratio": "Razão de issues fechadas"
+}
+
+median_df["metric"] = median_df["metric"].replace(metric_names)
+median_df = median_df.rename(columns={
+    "metric": "Métrica",
+    "median": "Mediana"
+})
+
+table = plt.table(
+    cellText=median_df.values,
+    colLabels=median_df.columns,
+    loc="center"
+)
+
+table = plt.table(
+    cellText=median_df.values,
+    colLabels=median_df.columns,
+    loc="center",
+    cellLoc="center",   # centraliza conteúdo das células
+    colLoc="center"     # centraliza cabeçalho
+)
+
+table.auto_set_font_size(False)
+table.set_fontsize(10)
+table.scale(1.2, 1.6)
+
+plt.title("Mediana das métricas analisadas")
+plt.savefig("reports/figures/medians_table.png", bbox_inches="tight", dpi=300)
+plt.close()

@@ -1,5 +1,5 @@
-from .client import run_query
-from .query import top_repositories_query
+from github_api.client import run_query
+from github_api.query import top_repositories_query
 
 def fetch_repositories(total=1000):
 

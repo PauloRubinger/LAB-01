@@ -4,17 +4,8 @@ import os
 
 load_dotenv()
 
-from .github_api.pagination import fetch_repositories
-from .processing.metrics import extract_metrics
-
-def test_query():
-    return """
-    {
-      viewer {
-        login
-      }
-    }
-    """
+from github_api.pagination import fetch_repositories
+from processing.metrics import extract_metrics
 
 def main():
 
@@ -24,7 +15,7 @@ def main():
 
     os.makedirs("data", exist_ok=True)
 
-    with open("data/repos_1000.csv", "w", newline="", encoding="utf-8") as f:
+    with open("data/raw/repos_1000.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
             fieldnames=[
